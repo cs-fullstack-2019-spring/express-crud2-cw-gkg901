@@ -10,14 +10,12 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-
 //Set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = '';
+var mongoDB = 'mongodb+srv://admin:@WSX3edc@cluster0-cbtsk.mongodb.net/mongoTest?retryWrites=true';
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
